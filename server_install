@@ -1,0 +1,11 @@
+#!/bin/bash
+sudo apt-get install apache2
+sudo apt-get install php5 libapache2-mod-php5 php5-curl
+
+sudo /etc/init.d/apache2 restart
+
+sudo apt-get install mysql-server
+sudo apt-get install libapache2-mod-auth-mysql php5-mysql phpmyadmin
+
+sudo sed -i.bak s/';   extension=msql.so'/'extension=msql.so'/g /etc/php5/apache2/php.ini
+sudo /etc/init.d/apache2 restart
