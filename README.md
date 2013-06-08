@@ -40,7 +40,7 @@ How To
     
     run the command "chmod +x *"
 
-4: if LAMP is installed jump to step 6
+4: if LAMP with PHP Curl is installed jump to step 6
 
 5: Install LAMP
     
