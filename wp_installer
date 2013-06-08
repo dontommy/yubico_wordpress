@@ -1,0 +1,40 @@
+#!/bin/bash
+if [ ! -f yubico_wp.tar.gz ]
+then
+  wget http://dontommy.com/yubico_wp.tar.gz
+fi
+if [ ! -d yubico_wp ]
+then
+	tar xvf yubico_wp.tar.gz
+fi
+echo "Enter Database Host:"
+read db_host
+echo "Enter Database Username:"
+read db_user
+echo "Enter Database Password:"
+read db_pass
+echo "Enter Database Name:"
+read db_name
+echo "Enter Yubico Client ID:"
+read yub_client
+echo "Enter Yubico Secret ID:"
+read yub_secret
+echo "Press Botton On Yubico Key:"
+read yub_key
+theyub=${yub_key:0:12}
+cd yubico_wp
+
+sed -i.bak s/YWDBHOST/$db_host/g wp-config.php
+sed -i.bak s/YWDBUSER/$db_user/g wp-config.php
+sed -i.bak s/YWDBPASS/$db_pass/g wp-config.php
+sed -i.bak s/YWDBNAME/$db_name/g wp-config.php
+
+sed -i.bak s/YWCLIENT/$yub_client/g wp-config.php
+sed -i.bak "s|YWSECRET|$yub_secret|g" wp-config.php
+
+sed -i.bak s/YWFIRST12/$theyub/g wp-config.php
+echo "---------------------"
+echo " "
+echo "Installation is done"
+echo "Go to your browser and point to the adress eg localhost/yubico_wp/"
+echo "Follow the steps on that install page and your done :)"
