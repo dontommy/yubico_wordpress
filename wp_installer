@@ -35,5 +35,5 @@ sed -i.bak s/YWFIRST12/$theyub/g wp-config.php
 echo "---------------------"
 echo " "
 echo "Installation is done"
-echo "Go to your browser and point to the adress eg localhost/yubico_wp/"
+echo "Go to your browser and point to the adress eg localhost/yubico_wordpress/"
 echo "Follow the steps on that install page and your done :)"
