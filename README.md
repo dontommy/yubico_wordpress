@@ -36,13 +36,13 @@ How To
 
 3: Make them executeable
     
-    run the command "chmod +x yubico_wordpress/*"
+    run the command "cd yubico_wordpress"
+    
+    run the command "chmod +x *"
 
 4: if LAMP is installed jump to step 6
 
 5: Install LAMP
-    
-    run the command "cd yubico_wordpress"
     
     run the command "./server_install" and follow the steps closely
   
